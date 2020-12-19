@@ -54,7 +54,7 @@ printf("check");
 		int fd_cl = open(fifo_cl, O_WRONLY);
 		while(1)
 		{
-			if(rd = read(file_fd, buf, PAGE_SIZE) < 0)
+			if((rd = read(file_fd, buf, PAGE_SIZE)) < 0)
 				perror("Unable to read the file");
 			if(rd == 0)
 				break;
