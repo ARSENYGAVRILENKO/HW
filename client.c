@@ -13,7 +13,6 @@ int main(int argc, char* argv[])
 {
 	int rd = -1;
 	char fifo_client[10] = "";
-printf("%d", getpid());
 	sprintf(fifo_client, "fifo.%d", getpid());
 	if(mkfifo(fifo_client, 0777) == -1)
 	{
@@ -28,7 +27,6 @@ printf("%d", getpid());
 	int pid = getpid();
 	int fd_serv = open("fifo_server", O_WRONLY);
 	int length = strlen(argv[1]);
-printf("pid = %d, length =  %d", pid, length);
 	if(wr = write(fd_serv, &length, sizeof(int))<0)
 	{
 		printf("Unable to write data");
