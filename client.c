@@ -45,7 +45,7 @@ int main(int argc, char* argv[])
 
 	while(1)
 	{
-		if(rd = read(fd_cl, buf, PAGE_SIZE) < 0)
+		if((rd = read(fd_cl, buf, PAGE_SIZE)) < 0)
 			perror("Unable to read the data from fifo");
 		if(rd == 0)
 			break;
